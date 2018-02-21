@@ -5,7 +5,7 @@ using FlightManager.Web.Model;
 
 namespace FlightManager.Web.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class FlightsController : Controller
     {
         private readonly IFlightService _flightService;

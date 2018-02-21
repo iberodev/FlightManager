@@ -22,9 +22,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\models\flight.model.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FlightManager.Data.SqlServer\FlightManager.Data.SqlServer.csproj" />
     <ProjectReference Include="..\FlightManager.Data\FlightManager.Data.csproj" />
     <ProjectReference Include="..\FlightManager.Web.Model\FlightManager.Web.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\models\flight.model.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

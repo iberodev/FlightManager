@@ -4,7 +4,7 @@ using FlightManager.Web.Services.AirportServices;
 
 namespace FlightManager.Web.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AirportsController : Controller
     {
         private readonly IAirportService _airportService;
