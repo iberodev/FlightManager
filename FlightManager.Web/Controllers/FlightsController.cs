@@ -23,7 +23,7 @@ namespace FlightManager.Web.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> AddFlightAsync([FromBody]Flight flight)
+        public async Task<IActionResult> AddFlightAsync([FromBody]FlightNew flight)
         {
             if (ModelState.IsValid)
             {

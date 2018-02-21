@@ -20,6 +20,6 @@ namespace FlightManager.Web.Services.FlightServices
         /// </summary>
         /// <param name="flight">the new flight</param>
         /// <returns>a promise of void</returns>
-        Task AddFlightAsync(Flight flight);
+        Task AddFlightAsync(FlightNew flight);
     }
 }

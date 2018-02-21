@@ -1,16 +1,57 @@
-<h1>Flight Manager</h1>
+<h1>Add Flight</h1>
+<form name="flightForm" (ngSubmit)="onSubmit()" role="form" class="form-horizontal">
+    <div class="panel panel-default cargo-panel">
+        <div class="panel-body row">
+            <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10">
+                <div class="row speedi-error"></div>
 
-<h2>Add Flight</h2>
-<!--<div class="box-header with-border">
-    <div class="form-group voffset row">
-        <label for="" class="vertical-label col-sm-4 col-md-8 text-right"> Select Departure Airport</label>
-        <div class="col-sm-8 col-md-4">
-            <select id="Id" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="nameId" name="Id" (change)="selectName();">
-                <option selected="" value=""></option>
-                <option [ngValue]="airport.code" *ngFor="let airport of airports">
-                    {{k.Name}}
-                </option>
-            </select>
+                <fieldset>
+                    <legend>Flight Details</legend>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="reference">Flight Reference</label>
+                        <div class="col-sm-8 col-lg-6 col-md-7">
+                            <input name="reference" class="form-control" [(ngModel)]="flightNew.reference"
+                                   required maxlength="5" />
+                        </div>
+                    </div>
+                </fieldset>
+                <br />
+                <fieldset>
+                    <legend>Departure</legend>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="departureAirport">Departure Airport</label>
+                        <div class="col-sm-8 col-lg-6 col-md-7">
+                            <select name="departureAirport" [(ngModel)]="flightNew.departureAirportCode" class="form-control" required>
+                                <option *ngFor="let a of airports" [value]="a.code">{{a.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <br />
+                <fieldset>
+                    <legend>Arrival</legend>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="arrivalAirport">Arival Airport</label>
+                        <div class="col-sm-8 col-lg-6 col-md-7">
+                            <select name="arrivalAirport" [(ngModel)]="flightNew.arrivalAirportCode" class="form-control" required>
+                                <option *ngFor="let a of airports" [value]="a.code">{{a.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10">
+                    <div class="form-group" style="margin-bottom:0;">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <input type="submit" value="Save" class="btn btn-primary"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>-->  
+</form>

@@ -22,12 +22,15 @@ namespace FlightManager.Data.SqlServer.Repositories
         public async Task AddFlightAsync(Flight flight)
         {
             await _context.AddAsync(flight);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Flight>> GetFlightsAsync()
         {
             var airports = await _context.Flights
                 .Where(f => !f.IsDeleted)
+                .Include(f => f.DepartureAirport)
+                .Include(f => f.ArrivalAirport)
                 .ToListAsync();
             return airports;
         }

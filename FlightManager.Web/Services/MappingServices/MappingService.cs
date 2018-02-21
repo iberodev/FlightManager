@@ -13,21 +13,8 @@ namespace FlightManager.Web.Services.MappingServices
             };
             return webModelAirport;
         }
-
-        public Flight GetFlight(Data.Models.Flight flight)
-        {
-            var webModelFlight = new Flight
-            {
-                Reference = flight.Reference,
-                DepartureAirportCode = flight.DepartureAirportCode,
-                DepartureTime = flight.DepartureTime,
-                ArrivalAirportCode = flight.ArrivalAirportCode,
-                ArrivalTime = flight.ArrivalTime
-            };
-            return webModelFlight;
-        }
-
-        public Data.Models.Flight GetFlight(Flight flight)
+        
+        public Data.Models.Flight GetFlight(FlightNew flight)
         {
             var entityFlight = new Data.Models.Flight
             {
@@ -38,6 +25,22 @@ namespace FlightManager.Web.Services.MappingServices
                 ArrivalTime = flight.ArrivalTime
             };
             return entityFlight;
+        }
+
+        public Flight GetFlight(Data.Models.Flight flight, double distanceMetres, 
+            double estimatedFuelConsumptionLitres)
+        {
+            var webModelFlight = new Flight
+            {
+                Reference = flight.Reference,
+                DepartureAirportCode = flight.DepartureAirportCode,
+                DepartureTime = flight.DepartureTime,
+                ArrivalAirportCode = flight.ArrivalAirportCode,
+                ArrivalTime = flight.ArrivalTime,
+                DistanceMetres = distanceMetres,
+                EstimatedFuelConsumptionLitres = estimatedFuelConsumptionLitres
+            };
+            return webModelFlight;
         }
     }
 }

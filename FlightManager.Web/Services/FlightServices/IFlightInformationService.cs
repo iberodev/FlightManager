@@ -5,17 +5,13 @@ namespace FlightManager.Web.Services.FlightServices
     public interface IFlightInformationService
     {
         /// <summary>
-        /// Gets the estimated fuel needed in meters for a flight between given coordinates
+        /// Gets the estimated fuel needed in litres for a flight of a given length
         /// </summary>
-        /// <param name="originLatitude">origin latitude coordinate</param>
-        /// <param name="originLongitude">origin longitude coordinate</param>
-        /// <param name="destinationLatitude">destination latitude coordinate</param>
-        /// <param name="destinationLongitude">destination longitude coordinate</param>
+        /// <param name="distanceInMetres">the distance in metres</param>
         /// <param name="airplaneType">(optional) the airplane size</param>
         /// <param name="averageEstimatedAltitude">(optional) estimated average altitude</param>
         /// <returns></returns>
-        double GetEstimatedFuelNeedInMeters(double originLatitude, double originLongitude,
-            double destinationLatitude, double destinationLongitude, 
+        double GetEstimatedFuelNeedInMeters(double distanceInMetres,
             AirplaneType airplaneType = AirplaneType.Medium, int averageEstimatedAltitude = 9000);
     }
 }

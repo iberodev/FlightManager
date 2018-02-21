@@ -5,14 +5,22 @@
 <table class='table' *ngIf="flights">
     <thead>
         <tr>
+            <th>Departure Time</th>
             <th>Departure Airport</th>
+            <th>Arrival Time</th>
             <th>Arrival Airport</th>
+            <th>Distance (kms)</th>
+            <th>Estimated Fuel Consumption (kms)</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let flight of flights">
-            <td>{{ flight.dateFormatted }}</td>
-            <td>{{ flight.temperatureC }}</td>
+            <td>{{ flight.departureTime | date:'medium' }}</td>
+            <td>{{ flight.departureAirportCode }}</td>
+            <td>{{ flight.arrivalTime | date:'medium'  }}</td>
+            <td>{{ flight.arrivalAirportCode }}</td>
+            <td>{{ flight.distanceMetres / 1000 | number }}</td>
+            <td>{{ flight.estimatedFuelConsumptionLitres * 0.26417 | number}}</td>
         </tr>
     </tbody>
 </table>
