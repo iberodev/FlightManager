@@ -41,7 +41,7 @@ namespace FlightManager.Web
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UseKestrel(options => {
-                    options.Listen(IPAddress.Loopback, 5001);
+                    options.Listen(IPAddress.Loopback, 5000);
                 })
                 .Build();
     }
