@@ -3,6 +3,7 @@ Flight Manager is a Single Page Application with AspNet Core 2.0 and Angular 4.2
 
 ## Pre-Requirements
 1. You need to have NPM installed to run this project because front-end dependencies (Install NodeJs)
+2. Clon the project with ```git clone https://github.com/iberodev/FlightManager.git```
 
 To run:
 1. ```cd FlightManager.Web```
